@@ -4,13 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="每日天父的話 - 透過NFC或網頁獲得每日靈修經文">
-  <title>天父的話 - 每日靈修</title>
+  <meta name="description" content="光寶智語 - 透過NFC或網頁獲得每日啟發">
+  <title>光寶智語 - Lite-On 每日一語</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Iansui&family=Noto+Sans+TC:wght@300;400;500;700&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap"
     rel="stylesheet">
 
   <style>
@@ -19,16 +19,17 @@
     }
 
     :root {
-      --bg-overlay: rgba(0, 0, 0, 0);
+      --bg-overlay: rgba(0, 0, 0, 0.1);
       --card-bg: rgba(255, 255, 255, 0.98);
-      --card-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      --card-shadow: 0 20px 60px rgba(0, 172, 187, 0.2);
       --text-primary: #2d3748;
       --text-secondary: #718096;
       --text-tertiary: #4a5568;
       --border-color: #e2e8f0;
-      --accent-color: #667eea;
-      --accent-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      --button-hover-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+      --accent-color: #00ACBB;
+      --accent-gradient: linear-gradient(135deg, #00ACBB 0%, #71DDE5 100%);
+      --accent-dark: #087990;
+      --button-hover-shadow: 0 6px 20px rgba(0, 172, 187, 0.4);
       --review-bg: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
       --loader-color: white;
     }
@@ -41,9 +42,10 @@
       --text-secondary: #a0aec0;
       --text-tertiary: #cbd5e0;
       --border-color: #4a5568;
-      --accent-color: #7c3aed;
-      --accent-gradient: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
-      --button-hover-shadow: 0 6px 20px rgba(124, 58, 237, 0.5);
+      --accent-color: #71DDE5;
+      --accent-gradient: linear-gradient(135deg, #00ACBB 0%, #71DDE5 100%);
+      --accent-dark: #087990;
+      --button-hover-shadow: 0 6px 20px rgba(113, 221, 229, 0.5);
       --review-bg: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
       --loader-color: #e2e8f0;
     }
@@ -68,8 +70,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: url(https://raw.githubusercontent.com/ga87008/rex123/refs/heads/main/background.jpg.jpg) no-repeat center center fixed;
-      background-size: cover;
+      background: linear-gradient(135deg, #00ACBB 0%, #71DDE5 50%, #087990 100%);
       z-index: 0;
     }
 
@@ -161,7 +162,7 @@
     }
 
     .verse-box::before {
-      content: '✨ 今日的話 ✨';
+      content: '💡 今日啟發';
       display: block;
       font-size: 0.9rem;
       color: var(--accent-color);
@@ -213,7 +214,7 @@
     }
 
     .verse {
-      font-family: 'Iansui', 'Noto Sans TC', serif;
+      font-family: 'Noto Sans TC', sans-serif;
       font-size: 1.4rem;
       line-height: 2;
       color: var(--text-primary);
@@ -222,15 +223,6 @@
       text-align: left;
       white-space: pre-line;
       font-weight: 400;
-      transition: color 0.3s ease;
-    }
-
-    .verse .salutation {
-      display: block;
-      margin-bottom: 0.8em;
-      text-align: left;
-      font-weight: 500;
-      color: var(--text-tertiary);
       transition: color 0.3s ease;
     }
 
@@ -345,7 +337,7 @@
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       border: none;
       cursor: pointer;
-      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+      box-shadow: 0 4px 12px rgba(0, 172, 187, 0.3);
     }
 
     .share-buttons a:hover {
@@ -360,7 +352,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(135deg, rgba(102, 126, 234, 0.95) 0%, rgba(118, 75, 162, 0.95) 100%);
+      background: linear-gradient(135deg, rgba(0, 172, 187, 0.95) 0%, rgba(113, 221, 229, 0.95) 100%);
       backdrop-filter: blur(10px);
       flex-direction: column;
       align-items: center;
@@ -627,7 +619,7 @@
       cursor: pointer;
       font-weight: 500;
       transition: all 0.3s;
-      box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+      box-shadow: 0 2px 8px rgba(0, 172, 187, 0.3);
     }
 
     .small-btn:hover {
@@ -691,7 +683,7 @@
     }
 
     .panel::-webkit-scrollbar-thumb:hover {
-      background: linear-gradient(135deg, #5568d3 0%, #653a8b 100%);
+      background: linear-gradient(135deg, #087990 0%, #00ACBB 100%);
     }
 
     .toast {
@@ -699,7 +691,7 @@
       bottom: 30px;
       left: 50%;
       transform: translateX(-50%) translateY(100px);
-      background: rgba(72, 187, 120, 0.95);
+      background: rgba(0, 172, 187, 0.95);
       color: white;
       padding: 14px 24px;
       border-radius: 12px;
@@ -732,6 +724,30 @@
       font-size: 1rem;
       line-height: 1.6;
     }
+
+    .liteon-logo {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+      font-weight: 700;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: 1px;
+    }
+
+    .footer {
+      position: fixed;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.7);
+      text-align: center;
+      z-index: 5;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    }
   </style>
 </head>
 
@@ -761,21 +777,22 @@
     </div>
     <p>請將手機靠近 NFC 標籤</p>
     <p class="nfc-error" id="nfcError"></p>
-    <button id="skipNfc">直接顯示經文</button>
+    <button id="skipNfc">直接顯示內容</button>
   </div>
 
   <div class="panel" id="welcomeModal" style="display: none; z-index: 2500; text-align: center; max-width: 500px;">
-    <div style="font-size: 4rem; margin-bottom: 24px;">🪨</div>
-    <h3 style="border: none; margin-bottom: 24px;">親愛的孩子</h3>
+    <div class="liteon-logo">LITE-ON</div>
+    <div style="font-size: 3rem; margin-bottom: 24px;">💡</div>
+    <h3 style="border: none; margin-bottom: 24px;">歡迎使用光寶智語</h3>
     <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 32px; color: var(--text-primary); text-align: left;">
-      這份每日的信息，是天父特別為擁有這塊「房角石」的你準備的。<br><br>
-      請將手機輕輕靠近你的石頭，讓我們一起聆聽祂的聲音～ ❤️
+      這是專為光寶夥伴與訪客準備的每日啟發。<br><br>
+      請將手機輕輕靠近您的 NFC 掛飾，讓我們一起感受光寶的智慧與價值～ 💡
     </p>
-    <button id="welcomeContinue" class="small-btn" style="width: 100%; padding: 14px; font-size: 1.1rem;">我明白了，繼續閱讀</button>
+    <button id="welcomeContinue" class="small-btn" style="width: 100%; padding: 14px; font-size: 1.1rem;">開始使用</button>
   </div>
 
   <div class="verse-box" id="verseBox">
-    <button class="favorite-btn" id="favoriteBtn" title="收藏此經文">🤍</button>
+    <button class="favorite-btn" id="favoriteBtn" title="收藏此內容">🤍</button>
     <div id="verse" class="verse"></div>
     <div id="reference" class="reference"></div>
     <div class="share-buttons">
@@ -831,8 +848,12 @@
 
   <div class="toast" id="toast"></div>
 
+  <div class="footer">
+    © 2026 Lite-On Technology Corporation. All Rights Reserved.
+  </div>
+
   <script type="module">
-    import verses from './verses.js';
+    import liteonContent from './liteon-content.js';
 
     document.addEventListener('DOMContentLoaded', function () {
       const nfcPanel = document.getElementById('nfcPanel');
@@ -863,12 +884,12 @@
 
       const toast = document.getElementById('toast');
 
-      const STORAGE_KEY = 'jp_history_v1';
-      const TODAY_KEY = 'jp_today_index_v1';
-      const FAVORITES_KEY = 'jp_favorites_v1';
-      const STATS_KEY = 'jp_stats_v1';
-      const THEME_KEY = 'jp_theme_v1';
-      const STONE_KEY = 'jp_stone_id_v1';
+      const STORAGE_KEY = 'liteon_history_v1';
+      const TODAY_KEY = 'liteon_today_index_v1';
+      const FAVORITES_KEY = 'liteon_favorites_v1';
+      const STATS_KEY = 'liteon_stats_v1';
+      const THEME_KEY = 'liteon_theme_v1';
+      const PENDANT_KEY = 'liteon_pendant_id_v1';
 
       let currentVerse = null;
       let currentIndex = null;
@@ -1026,7 +1047,7 @@
           favoritesList.innerHTML = `
             <div class="empty-state">
               <div class="empty-state-icon">⭐</div>
-              <div class="empty-state-text">還沒有收藏任何經文<br>點擊經文右上角的 ❤️ 來收藏</div>
+              <div class="empty-state-text">還沒有收藏任何內容<br>點擊內容右上角的 ❤️ 來收藏</div>
             </div>
           `;
         } else {
@@ -1070,7 +1091,7 @@
           return;
         }
 
-        let text = '=== 我的收藏 ===\n\n';
+        let text = '=== 光寶智語 - 我的收藏 ===\n\n';
         favorites.forEach((f, idx) => {
           text += `【${f.ref}】\n${f.text}\n\n`;
         });
@@ -1079,7 +1100,7 @@
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = `我的收藏_${todayString()}.txt`;
+        a.download = `光寶智語_我的收藏_${todayString()}.txt`;
         document.body.appendChild(a);
         a.click();
         a.remove();
@@ -1138,7 +1159,7 @@
           index = (index << 5) - index + seed.charCodeAt(i);
           index |= 0;
         }
-        index = Math.abs(index) % verses.length;
+        index = Math.abs(index) % liteonContent.length;
 
         try {
           localStorage.setItem(TODAY_KEY, JSON.stringify({
@@ -1170,8 +1191,8 @@
         const record = {
           date: date,
           index: index,
-          text: verses[index].text,
-          ref: verses[index].ref,
+          text: liteonContent[index].text,
+          ref: liteonContent[index].ref,
           ts: Date.now()
         };
 
@@ -1214,7 +1235,7 @@
         const week = getWeeklyHistory();
         if (!week.length) return '本週沒有紀錄。';
 
-        let text = '=== 本週天父的話回顧 ===\n\n';
+        let text = '=== 光寶智語 - 本週回顧 ===\n\n';
         week.forEach((r, idx) => {
           const dateStr = formatDate(r.date);
           text += `【${dateStr}】 ${r.ref}\n${r.text}\n\n`;
@@ -1269,53 +1290,15 @@
         return div.innerHTML;
       }
 
-      function formatLetterText(text) {
-        let salutation = '';
-        let content = text;
-
-        const greetings = ['親愛的孩子，', '親愛的孩子：', '孩子，', '孩子：'];
-        for (const greeting of greetings) {
-          if (text.startsWith(greeting)) {
-            salutation = greeting.endsWith('：') ? greeting : greeting.replace('，', '：');
-            content = text.slice(greeting.length);
-            break;
-          }
-        }
-
-        return { salutation, content };
-      }
-
-      function animateLetterWriting(element, text) {
+      function animateTextWriting(element, text) {
         element.innerHTML = '';
-
-        const formatted = formatLetterText(text);
-        let totalDelay = 0;
-
-        if (formatted.salutation) {
-          const salutationDiv = document.createElement('div');
-          salutationDiv.className = 'salutation';
-          element.appendChild(salutationDiv);
-
-          formatted.salutation.split('').forEach((char, index) => {
-            const span = document.createElement('span');
-            span.className = 'char';
-            span.textContent = char;
-            salutationDiv.appendChild(span);
-
-            setTimeout(() => {
-              span.style.animation = 'penStroke 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards';
-            }, index * 100);
-          });
-
-          totalDelay = formatted.salutation.length * 100;
-        }
 
         const contentDiv = document.createElement('div');
         contentDiv.className = 'content';
         element.appendChild(contentDiv);
 
         let charIndex = 0;
-        formatted.content.split('').forEach((char) => {
+        text.split('').forEach((char) => {
           if (char === '\n') {
             contentDiv.appendChild(document.createElement('br'));
           } else {
@@ -1326,13 +1309,13 @@
 
             setTimeout(() => {
               span.style.animation = 'penStroke 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards';
-            }, totalDelay + (charIndex * 100));
+            }, charIndex * 80);
 
             charIndex++;
           }
         });
 
-        return totalDelay + (charIndex * 100);
+        return charIndex * 80;
       }
 
       function showVerse(forcedIndex = null) {
@@ -1343,7 +1326,7 @@
 
           const index = forcedIndex !== null ? forcedIndex : getDailyIndex();
           currentIndex = index;
-          currentVerse = verses[index];
+          currentVerse = liteonContent[index];
 
           const verseElement = document.getElementById('verse');
           const refElement = document.getElementById('reference');
@@ -1355,7 +1338,7 @@
           updateFavoriteButton();
 
           const shareText = encodeURIComponent(
-            `${currentVerse.text}\n\n——${currentVerse.ref}`
+            `${currentVerse.text}\n\n——${currentVerse.ref}\n\n光寶智語 Lite-On`
           );
           document.getElementById('share-line').href =
             `https://line.me/R/msg/text/?${shareText}`;
@@ -1366,7 +1349,7 @@
             loader.style.display = 'none';
             verseBox.style.display = 'block';
 
-            const animationDuration = animateLetterWriting(verseElement, currentVerse.text);
+            const animationDuration = animateTextWriting(verseElement, currentVerse.text);
 
             saveToHistory(index);
             const stats = updateStats();
@@ -1379,7 +1362,7 @@
             }, animationDuration + 800);
           }, 300);
         } catch (error) {
-          console.error("顯示經文時出錯:", error);
+          console.error("顯示內容時出錯:", error);
           loader.textContent = "載入失敗，請重新整理頁面";
           verseBox.style.display = 'none';
         }
@@ -1407,7 +1390,7 @@
 
         nfcTimeout = setTimeout(() => {
           if (!alreadyRead) {
-            nfcError.textContent = '⏱️ 掃描超時，自動顯示經文';
+            nfcError.textContent = '⏱️ 掃描超時，自動顯示內容';
             setTimeout(showVerse, 1000);
           }
         }, 3000);
@@ -1477,7 +1460,7 @@
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = `天父的話_本週回顧_${todayString()}.txt`;
+        a.download = `光寶智語_本週回顧_${todayString()}.txt`;
         document.body.appendChild(a);
         a.click();
         a.remove();
@@ -1495,26 +1478,23 @@
         });
       });
 
-      function checkStoneStatus() {
+      function checkPendantStatus() {
         const urlParams = new URLSearchParams(window.location.search);
-        const stoneId = urlParams.get('stone');
+        const pendantId = urlParams.get('pendant');
 
-        if (stoneId) {
-          // Found stone ID in URL -> Register
-          localStorage.setItem(STONE_KEY, stoneId);
-          // Clean URL without reloading and remove query param
+        if (pendantId) {
+          localStorage.setItem(PENDANT_KEY, pendantId);
           const newUrl = window.location.pathname;
           window.history.replaceState({}, document.title, newUrl);
-          return true; // Is Registered
+          return true;
         }
 
-        // Check LocalStorage
-        const storedId = localStorage.getItem(STONE_KEY);
+        const storedId = localStorage.getItem(PENDANT_KEY);
         if (storedId) {
-          return true; // Is Registered
+          return true;
         }
 
-        return false; // Not Registered
+        return false;
       }
 
       function startApp() {
@@ -1522,7 +1502,7 @@
 
         if (isAndroid) {
           if (isLaunchedByNFC()) {
-            console.log('檢測到可能由 NFC 標籤啟動,直接顯示經文');
+            console.log('檢測到可能由 NFC 標籤啟動,直接顯示內容');
             showVerse();
           } else {
             try {
@@ -1543,14 +1523,13 @@
         }
       }
 
-      // Initialize
-      if (checkStoneStatus()) { 
+      if (checkPendantStatus()) { 
           startApp();
       } else {
           const welcomeModal = document.getElementById('welcomeModal');
           const welcomeContinue = document.getElementById('welcomeContinue');
 
-          initTheme(); // Still init theme so it looks good
+          initTheme();
 
           if (welcomeModal) {
             welcomeModal.style.display = 'block';
